@@ -13,15 +13,15 @@ html(lang="en")
         div.container
             div.row
                 div.col
-                    table.table.table-striped
+                    table.table.table-striped.table-bordered
                         thead.thead-light
                             tr
-                                th Name
-                                th Latitude
-                                th Longitude
-                                th Current Temperature
-                                th 24h temperature high
-                                th 24h temperature low
+                                th(scope="row") Name
+                                th(scope="row") Latitude
+                                th(scope="row") Longitude
+                                th(scope="row") Current Temperature
+                                th(scope="row") 24h temperature high
+                                th(scope="row") 24h temperature low
                         tbody
                             each result in results
                                 tr
