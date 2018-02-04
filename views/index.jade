@@ -13,23 +13,25 @@ html(lang="en")
         div.container
             div.row
                 div.col
-                    table.table.table-bordered.table-striped.thead-dark
-                        tr
-                            th Name
-                            th Latitude
-                            th Longitude
-                            th Current Temperature
-                            th 24h temperature high
-                            th 24h temperature low
-                        tr
-                        each result in results
+                    table.table.table-bordered.table-striped
+                        thead.thead-dark
                             tr
-                                td #{result.name}
-                                td #{result.latitude}
-                                td #{result.longitude}
-                                td #{result.currentTemp}
-                                td #{result.highTemp}
-                                td #{result.lowTemp}
+                                th Name
+                                th Latitude
+                                th Longitude
+                                th Current Temperature
+                                th 24h temperature high
+                                th 24h temperature low
+                        tbody
+                            tr
+                                each result in results
+                                tr
+                                    td #{result.name}
+                                    td #{result.latitude}
+                                    td #{result.longitude}
+                                    td #{result.currentTemp}
+                                    td #{result.highTemp}
+                                    td #{result.lowTemp}
                 div.col
                     form(action="/update", method="POST")
                         p Observation point
