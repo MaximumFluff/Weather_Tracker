@@ -1,7 +1,8 @@
 doctype html
 html(lang="en")
     head
-        title myApp
+        title Reaktor App
+        link(rel="stylesheet", href="table.css")
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" ,integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ", crossorigin="anonymous")
         script(src="https://code.jquery.com/jquery-3.1.1.slim.min.js", integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" ,crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js",integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb", crossorigin="anonymous")
@@ -12,7 +13,7 @@ html(lang="en")
         div.container
             div.row
                 div.col
-                    table.table-bordered.table-striped
+                    table.table.table-bordered.table-striped.thead-dark
                         tr
                             th Name
                             th Latitude
@@ -29,7 +30,6 @@ html(lang="en")
                                 td #{result.currentTemp}
                                 td #{result.highTemp}
                                 td #{result.lowTemp}
-            div.row
                 div.col
                     form(action="/update", method="POST")
                         p Observation point
@@ -50,5 +50,6 @@ html(lang="en")
                         br
                         br
                         input(type="submit", value="Update")
+                
         
 
