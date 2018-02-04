@@ -24,13 +24,13 @@ html(lang="en")
                                 th 24h temperature low
                         tbody
                             each result in results
-                            tr
-                                td #{result.name}
-                                td #{result.latitude}
-                                td #{result.longitude}
-                                td #{result.currentTemp}
-                                td #{result.highTemp}
-                                td #{result.lowTemp}
+                                tr
+                                    td #{result.name}
+                                    td #{result.latitude}
+                                    td #{result.longitude}
+                                    td #{result.currentTemp}
+                                    td #{result.highTemp}
+                                    td #{result.lowTemp}
                 div.col
                     form(action="/update", method="POST")
                         p Observation point
