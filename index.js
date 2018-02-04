@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 const MongoClient = require('mongodb').MongoClient;
+let port = process.env.PORT || 8000;
 //var url = "mongodb://localhost:27017/cities";
 const url = "mongodb://guest:guest@ds125058.mlab.com:25058/heroku_961hzsbr";
 
@@ -64,4 +65,9 @@ app.post('/update', (req, res) =>
         });
     });
     res.redirect("back");
+});
+
+server.listen(port, () =>
+{
+    console.log("app running on port" + port);
 });
