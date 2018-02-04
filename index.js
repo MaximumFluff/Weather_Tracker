@@ -4,7 +4,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const MongoClient = require('mongodb').MongoClient;
 //var url = "mongodb://localhost:27017/cities";
-let url = "mongodb://heroku_9j6r4fpc:pnglsdaltr7lj578mleg5jjfm9@ds125048.mlab.com:25048/heroku_9j6r4fpc";
+let url = "mongodb://heroku_961hzsbr:eti3bqovpl3qc5athhf4d8qbla@ds125058.mlab.com:25058/heroku_961hzsbr";
 
 MongoClient.connect(url, (err, db) =>
  {
