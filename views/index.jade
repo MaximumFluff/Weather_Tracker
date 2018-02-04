@@ -14,14 +14,14 @@ html(lang="en")
             div.row
                 div.col
                     table.table.table-striped.table-bordered
-                        thead.thead-light
+                        thead.thead-dark
                             tr
-                                th(scope="row") Name
-                                th(scope="row") Latitude
-                                th(scope="row") Longitude
-                                th(scope="row") Current Temperature
-                                th(scope="row") 24h temperature high
-                                th(scope="row") 24h temperature low
+                                th Name
+                                th Latitude
+                                th Longitude
+                                th Current Temperature
+                                th 24h Temperature High
+                                th 24h Temperature Low
                         tbody
                             each result in results
                                 tr
@@ -43,10 +43,10 @@ html(lang="en")
                         p Current temp:
                         input(type="number", name="currentTemp")
                         br
-                        p Highest Temp:
+                        p 24h Highest Temp:
                         input(type="number", name="highestTemp")
                         br
-                        p Lowest Temp:
+                        p 24h Lowest Temp:
                         input(type="number", name="lowestTemp")
                         br
                         br
