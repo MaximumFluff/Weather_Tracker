@@ -4,12 +4,12 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const MongoClient = require('mongodb').MongoClient;
 //var url = "mongodb://localhost:27017/cities";
-let url = "mongodb://heroku_961hzsbr:eti3bqovpl3qc5athhf4d8qbla@ds125058.mlab.com:25058/heroku_961hzsbr";
+const url = "mongodb://heroku_961hzsbr:eti3bqovpl3qc5athhf4d8qbla@ds125058.mlab.com:25058/heroku_961hzsbr";
 
 MongoClient.connect(url, (err, db) =>
  {
   if (err) throw err;
-  let dbo = db.db("heroku_9j6r4fpc");
+  let dbo = db.db("heroku_961hzsbr");
   dbo.collection("cities").findOne({}, (err, result) =>
     {
         if (err) throw err;
@@ -28,7 +28,7 @@ app.get('/', (req, res) =>
     MongoClient.connect(url, (err, db) =>
     {
         if (err) throw err;
-        let dbo = db.db("heroku_9j6r4fpc");
+        let dbo = db.db("heroku_961hzsbr");
         let str = dbo.collection("cities").find();
         str.forEach((doc, err) =>
         {
@@ -44,7 +44,7 @@ app.get('/', (req, res) =>
     });
     
 });
-app.post('/updatetokyo', (req, res) =>
+app.post('/update', (req, res) =>
 {
     let cTemp = req.body.currentTemp;
     let hTemp = req.body.highestTemp;
@@ -53,7 +53,7 @@ app.post('/updatetokyo', (req, res) =>
     MongoClient.connect(url, (err, db) =>
     {
         if (err) throw err;
-        var dbo = db.db("heroku_9j6r4fpc");
+        var dbo = db.db("heroku_961hzsbr");
         var myQuery = { name:  name };
         var newValues = { $set: {currentTemp: cTemp, highTemp: hTemp, lowTemp: lTemp} };
         dbo.collection("cities").updateOne(myQuery, newValues, (err, res) =>
@@ -65,5 +65,3 @@ app.post('/updatetokyo', (req, res) =>
     });
     res.redirect("back");
 });
-
-//app.listen(3000, () => console.log('listening on port 3000!'))
