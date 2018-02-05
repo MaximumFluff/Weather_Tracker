@@ -10,47 +10,47 @@ html(lang="en")
     body
         div.jumbotron.jumbotron-fluid.text-center
             h1 Reaktor App
-            div.container
-                div.row
-                    div.col
-                        table.table.table-striped.table-bordered
-                            thead.thead-dark
+        div.container
+            div.row
+                div.col-sm-6
+                    table.table.table-striped.table-bordered
+                        thead.thead-dark
+                            tr
+                                th Name
+                                th Latitude
+                                th Longitude
+                                th Current Temperature
+                                th 24h Temperature High
+                                th 24h Temperature Low
+                        tbody
+                            each result in results
                                 tr
-                                    th Name
-                                    th Latitude
-                                    th Longitude
-                                    th Current Temperature
-                                    th 24h Temperature High
-                                    th 24h Temperature Low
-                            tbody
-                                each result in results
-                                    tr
-                                        td #{result.name}
-                                        td #{result.latitude}
-                                        td #{result.longitude}
-                                        td #{result.currentTemp}
-                                        td #{result.highTemp}
-                                        td #{result.lowTemp}
-                    div.col
-                        form(action="/update", method="POST")
-                            p Observation point
-                            select(name="city")
-                                option Tokyo
-                                option Helsinki
-                                option New York
-                                option Amsterdam
-                                option Dubai
-                            p Current temp:
-                            input(type="number", name="currentTemp")
-                            br
-                            p 24h Highest Temp:
-                            input(type="number", name="highestTemp")
-                            br
-                            p 24h Lowest Temp:
-                            input(type="number", name="lowestTemp")
-                            br
-                            br
-                            input(type="submit", value="Update")
+                                    td #{result.name}
+                                    td #{result.latitude}
+                                    td #{result.longitude}
+                                    td #{result.currentTemp}
+                                    td #{result.highTemp}
+                                    td #{result.lowTemp}
+                div.col-sm-6
+                    form(action="/update", method="POST")
+                        p Observation point
+                        select(name="city")
+                            option Tokyo
+                            option Helsinki
+                            option New York
+                            option Amsterdam
+                            option Dubai
+                        p Current temp:
+                        input(type="number", name="currentTemp")
+                        br
+                        p 24h Highest Temp:
+                        input(type="number", name="highestTemp")
+                        br
+                        p 24h Lowest Temp:
+                        input(type="number", name="lowestTemp")
+                        br
+                        br
+                        input(type="submit", value="Update")
                 
         
 
