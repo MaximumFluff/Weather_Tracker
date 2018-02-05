@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 const MongoClient = require('mongodb').MongoClient;
-let port = process.env.PORT || 8000;
+const port = process.env.PORT || 8000;
 //var url = "mongodb://localhost:27017/cities";
 const url = "mongodb://guest:guest@ds125058.mlab.com:25058/heroku_961hzsbr";
 
@@ -54,9 +54,9 @@ app.post('/update', (req, res) =>
     MongoClient.connect(url, (err, db) =>
     {
         if (err) throw err;
-        var dbo = db.db("heroku_961hzsbr");
-        var myQuery = { name:  name };
-        var newValues = { $set: {currentTemp: cTemp, highTemp: hTemp, lowTemp: lTemp} };
+        let dbo = db.db("heroku_961hzsbr");
+        let myQuery = { name:  name };
+        let newValues = { $set: {currentTemp: cTemp, highTemp: hTemp, lowTemp: lTemp} };
         dbo.collection("cities").updateOne(myQuery, newValues, (err, res) =>
         {
             if (err) throw err;
