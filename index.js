@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const MongoClient = require('mongodb').MongoClient;
 const port = process.env.PORT || 8000;
 //var url = "mongodb://localhost:27017/cities";
-const url = "mongodb://guest:guest@ds125058.mlab.com:25058/heroku_961hzsbr";
+const url = "mongodb://<username>:<password>@ds125058.mlab.com:25058/heroku_961hzsbr";
 
 MongoClient.connect(url, (err, db) =>
  {
