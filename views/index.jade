@@ -8,11 +8,12 @@ html(lang="en")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js",integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb", crossorigin="anonymous")
         script( src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" ,integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" ,crossorigin="anonymous")
     body
-        div.jumbotron.jumbotron-fluid.text-center
-            h1 Reaktor App
+        div.row
+            div.jumbotron.jumbotron-fluid.container-fluid.text-center
+                h1 Reaktor App
         div.container
             div.row
-                div.col-sm-6
+                div.col
                     table.table.table-striped.table-bordered
                         thead.thead-dark
                             tr
@@ -31,7 +32,7 @@ html(lang="en")
                                     td #{result.currentTemp}
                                     td #{result.highTemp}
                                     td #{result.lowTemp}
-                div.col-sm-6
+                div.col
                     form(action="/update", method="POST")
                         p Observation point
                         select(name="city")
